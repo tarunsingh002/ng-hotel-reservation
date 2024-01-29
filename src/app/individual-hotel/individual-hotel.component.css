@@ -1,0 +1,33 @@
+img {
+  height: 500px;
+  object-fit: cover;
+  /* object-position: top; */
+}
+
+small {
+  color: red;
+}
+
+/* @media (max-width: 1200px) {
+  img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 992px) {
+  img {
+    height: 600px;
+  }
+} */
+
+@media (max-width: 768px) {
+  img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  img {
+    height: 80vw;
+  }
+}

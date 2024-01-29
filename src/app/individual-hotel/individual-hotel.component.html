@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="border my-5">
+        <img class="w-100" [src]="hotel.url">
+        <div class="row no-gutters">
+            <div class="col-lg-8">
+                <div class="border d-flex flex-column justify-content-between">
+                    <div class="card-header">
+                        <h5 class="card-title text-center">
+                            {{hotel.name}}
+                        </h5>
+                    </div>
+                    <div class="d-flex flex-column justify-content-end">
+                        <div class="card-body">
+                            <h6 class="card-subtitle text-center mb-4">{{"Location: "+hotel.location}}
+                            </h6>
+                            <h6 class="card-subtitle text-center mb-4">{{"Amenities: "+hotel.amenities}}
+                            </h6>
+                            <h6 class="card-subtitle text-center">
+                                {{"Price: "+ (hotel.price | currency:"&#8360;")}}
+                            </h6>
+                            <h6 class="text-center mt-1 mb-4 mb-xl-4 lead">per room per night</h6>
+
+                            <p class="card-text">
+                                {{hotel.description}}
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <h4 class="text-center">{{"Total amount :"+ (totalAmount | currency:"&#8360;")}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card-body">
+                    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
+                        <div formGroupName="dates">
+                            <div class="form-group">
+                                <label for="fromDate">From Date</label>
+                                <input type="date" formControlName="fromDate" id="fromDate" class="form-control"
+                                    [min]="today">
+                            </div>
+                            <div class="form-group mb-1">
+                                <label for="toDate">To Date</label>
+                                <input type="date" formControlName="toDate" id="toDate" class="form-control"
+                                    [min]="minToDate">
+                            </div>
+                            <div *ngIf="reactiveForm.controls.dates.errors">
+                                <small>{{reactiveForm.controls.dates.errors.dates}}</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="mb-2" for="quantity">Number of Rooms</label>
+                            <select formControlName="quantity" id="quantity" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <button [disabled]="!reactiveForm.valid" type="submit" [disabled]="!auth || webmaster"
+                            class="btn btn-block btn-lg btn-primary mt-4">Book</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

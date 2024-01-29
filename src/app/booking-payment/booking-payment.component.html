@@ -1,0 +1,61 @@
+<div class="container">
+    <h3 *ngIf="!displayCart" class="display-3 text-center">Your Cart is empty</h3>
+    <div *ngIf="displayCart">
+        <h3 class="display-3 text-center mb-4">Checkout Page</h3>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h3 class="text-center mb-4 lead">Your Booking:</h3>
+                <ul class="list-group">
+                    <li class="list-group-item text-center">
+                        {{displayCart.hotel.name}}
+                    </li>
+                    <li class="list-group-item">
+                        {{"Location: "+displayCart.hotel.location}}
+                    </li>
+                    <li class="list-group-item">
+                        {{"Number of Rooms: "+displayCart.roomsQuantity}}
+                    </li>
+                    <li class="list-group-item">
+                        {{"From Date: "+displayCart.fromDate}}
+                    </li>
+                    <li class="list-group-item">
+                        {{"To Date: "+displayCart.toDate}}
+                    </li>
+                </ul>
+                <h4 class=" text-center my-3">{{"Total Amount: "+(displayCart.totalAmount | currency:"&#8360;")}}
+                </h4>
+            </div>
+            <div class="col-md-6 card">
+                <h3 class="text-center mb-4 lead">Payment Details:</h3>
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" ngModel name="address" id="address" required class="form-control"
+                            #address="ngModel">
+                        <small *ngIf="address.invalid && address.touched">Address is a required field</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameOnCard">Name on Card</label>
+                        <input type="text" ngModel name="nameOnCard" id="nameOnCard" required class="form-control"
+                            #nameOnCard="ngModel">
+                        <small *ngIf="nameOnCard.invalid && nameOnCard.touched">Name On Card is a required field</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="number" ngModel name="cardNumber" id="cardNumber" required class="form-control"
+                            #cardNumber="ngModel">
+                        <small *ngIf="cardNumber.invalid && cardNumber.touched">Card Number is a required field</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" ngModel name="expiry" id="expiry" required class="form-control"
+                            #expiryDate="ngModel">
+                        <small *ngIf="expiryDate.invalid && expiryDate.touched">Expiry Date is a required field</small>
+                    </div>
+                    <button [disabled]="f.invalid" class="btn btn-primary mb-3" type="submit">Pay</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

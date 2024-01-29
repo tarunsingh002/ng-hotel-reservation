@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+// $primary: #104deb;
+// $info: #a810eb;
+// $danger: #1910eb;
+// $warning: #6010eb;
+$secondary: #e9ecef;
+
+$B1-hex: #4b7ccc;
+$B2-hex: #77f2ff;
+$B3-hex: #858d99;
+$B4-hex: #ff8658;
+$B5-hex: #cc5948;
+
+$primary: $B1-hex;
+$info: $B3-hex;
+$danger: $B5-hex;
+$warning: $B4-hex;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  background-color: $light;
+}

@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center mb-5">
+        <div class="col-sm-8 col-lg-6 col-xl-4">
+            <form [formGroup]="reactiveForm">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><app-search></app-search></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Location (eg Gurgaon, Noida)"
+                        formControlName="search">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div *ngIf="!hotels.length" class="w-100 no-hotels d-flex align-items-center justify-content-center">
+        <h3 class="display-3 text-center">There are currently no hotels for your search query</h3>
+    </div>
+    <div *ngIf="hotels.length" class="row">
+        <div class="col-sm-6 col-xl-4 mb-4" *ngFor="let hotel of hotels; let i = index">
+            <div class="card">
+                <img [src]="hotel.url">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{hotel.name}}</h5>
+                    <h6 class="card-subtitle text-center">{{"Location: "+hotel.location}}</h6>
+                    <h6 class="card-subtitle text-center mt-2">{{"Price: "+ (hotel.price | currency:"&#8360;")}}</h6>
+                    <h6 class="text-center mt-1 lead">per room per night</h6>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-block btn-info mx-2 my-2" [routerLink]="['/hotel',i]">Details</button>
+                    <button class="btn btn-block btn-primary mx-2 my-2" *ngIf="!webmaster && auth"
+                        (click)="bookNow(hotel)">Book Now</button>
+                    <button class="btn btn-block btn-danger mx-2 my-2" *ngIf="webmaster"
+                        (click)="onDelete(i)">Delete</button>
+                    <button class="btn btn-block btn-warning mx-2 my-2" *ngIf="webmaster"
+                        [routerLink]="['/hotel',i,'edit']">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <div *ngIf="!displayBookingCarts.length" class="w-100 no-orders d-flex align-items-center justify-content-center">
+        <h3 class="display-3 text-center">You have not made any bookings</h3>
+    </div>
+    <div *ngIf="displayBookingCarts.length" class="mb-5">
+        <div class="lead text-center mb-3">Hello, {{user.email}} here are your bookings: </div>
+        <div *ngFor="let cart of displayBookingCarts; let i=index">
+            <h3 class="display-4 text-center">{{"Booking "+(i+1)}}</h3>
+            <div class="card mb-4">
+                <ul class="list-group">
+                    <li class="list-group-item text-center">
+                        {{cart.hotel.name}}
+                    </li>
+                    <li class="list-group-item">
+                        {{"Location: "+cart.hotel.location}}
+                    </li>
+                    <li class="list-group-item">
+                        {{"Number of Rooms: "+cart.roomsQuantity}}
+                    </li>
+                    <li class="list-group-item">
+                        {{"From Date: "+cart.fromDate}}
+                    </li>
+                    <li class="list-group-item">
+                        {{"To Date: "+cart.toDate}}
+                    </li>
+                </ul>
+                <div class="card-footer">
+                    {{"Total Amount: "+(cart.totalAmount | currency:"&#8360;")}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

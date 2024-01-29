@@ -1,0 +1,15 @@
+/* .content {
+  flex-basis: 100%;
+} */
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+small {
+  color: red;
+}
+
+.container {
+  height: 80vh;
+}
