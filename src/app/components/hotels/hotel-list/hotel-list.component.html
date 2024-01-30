@@ -6,7 +6,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><app-search></app-search></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Location (eg Gurgaon, Noida)"
+                    <input type="text" class="form-control" placeholder="Location (eg Gurugram, Noida)"
                         formControlName="search">
                 </div>
             </form>
@@ -26,13 +26,13 @@
                     <h6 class="text-center mt-1 lead">per room per night</h6>
                 </div>
                 <div class="card-body">
-                    <button class="btn btn-block btn-info mx-2 my-2" [routerLink]="['/hotel',i]">Details</button>
+                    <button class="btn btn-block btn-info mx-2 my-2" [routerLink]="['/hotels',i]">Details</button>
                     <button class="btn btn-block btn-primary mx-2 my-2" *ngIf="!webmaster && auth"
                         (click)="bookNow(hotel)">Book Now</button>
                     <button class="btn btn-block btn-danger mx-2 my-2" *ngIf="webmaster"
                         (click)="onDelete(i)">Delete</button>
                     <button class="btn btn-block btn-warning mx-2 my-2" *ngIf="webmaster"
-                        [routerLink]="['/hotel',i,'edit']">Edit</button>
+                        [routerLink]="['/hotels',i,'edit']">Edit</button>
                 </div>
             </div>
         </div>

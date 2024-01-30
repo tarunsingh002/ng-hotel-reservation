@@ -1,6 +1,15 @@
-# FirstApp
+# Ng-Hotel-Booking-App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+
+## Project Working Link
+
+https://ng-hotel-booking.netlify.app/
+
+## Username and Password to test out various features:
+
+username: test@test.com
+password: tester
 
 ## Development server
 

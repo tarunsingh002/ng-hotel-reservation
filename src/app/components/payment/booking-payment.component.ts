@@ -79,7 +79,7 @@ export class BookingPaymentComponent implements OnInit, OnDestroy {
       this.cartservice.bookingCartChanged.next(null);
       this.cartservice.bookingCart = null;
       localStorage.removeItem("bookingCart");
-      this.router.navigate(["complete"]);
+      this.router.navigate(["miscellaneous/complete"]);
     });
   }
 }
