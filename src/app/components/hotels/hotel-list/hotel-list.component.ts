@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Hotel } from "../hotel.model";
+import { Hotel } from "../../../models/hotel.model";
 import { Subscription } from "rxjs";
-import { HotelService } from "../hotel.service";
-import { HotelFirebaseService } from "../hotel-firebase.service";
-import { AuthService } from "../auth/auth.service";
+import { HotelService } from "../../../services/hotel.service";
+import { HotelFirebaseService } from "../../../services/hotel-firebase.service";
+import { AuthService } from "../../../services/auth-services/auth.service";
 import { Router } from "@angular/router";
-import { BookingCartService } from "../booking-payment/bookingCart.service";
-import { Booking } from "../booking-payment/booking.model";
+import { BookingCartService } from "../../../services/bookingCart.service";
+import { Booking } from "../../../models/booking.model";
 import { formatDate } from "@angular/common";
 import { FormControl, FormGroup } from "@angular/forms";
 
@@ -42,9 +42,11 @@ export class HotelListComponent implements OnInit, OnDestroy {
       if (value.search.trim() === "") {
         this.hotels = this.hservice.getHotels();
       } else {
-        this.hotels = this.hotels.filter((h) =>
-          h.location.toLowerCase().includes(value.search.trim().toLowerCase())
-        );
+        this.hotels = this.hservice
+          .getHotels()
+          .filter((h) =>
+            h.location.toLowerCase().includes(value.search.trim().toLowerCase())
+          );
       }
     });
   }

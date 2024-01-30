@@ -1,13 +1,13 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Booking } from "./booking.model";
+import { Booking } from "../../models/booking.model";
 import { Subscription } from "rxjs";
-import { User } from "../auth/user.model";
-import { Hotel } from "../hotel.model";
-import { UserService } from "../auth/user.service";
-import { AuthService } from "../auth/auth.service";
+import { User } from "../../models/user.model";
+import { Hotel } from "../../models/hotel.model";
+import { UserService } from "../../services/auth-services/user.service";
+import { AuthService } from "../../services/auth-services/auth.service";
 import { Router } from "@angular/router";
-import { LoadingService } from "../loading.service";
-import { BookingCartService } from "./bookingCart.service";
+import { LoadingService } from "../../services/loading.service";
+import { BookingCartService } from "../../services/bookingCart.service";
 import { NgForm } from "@angular/forms";
 
 @Component({

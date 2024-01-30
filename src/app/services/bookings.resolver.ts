@@ -6,15 +6,15 @@ import {
   ActivatedRouteSnapshot,
 } from "@angular/router";
 import { Observable, concat, of } from "rxjs";
-import { AuthService } from "../auth/auth.service";
-import { UserService } from "../auth/user.service";
-import { LoadingService } from "../loading.service";
-import { HotelFirebaseService } from "../hotel-firebase.service";
+import { AuthService } from "./auth-services/auth.service";
+import { UserService } from "./auth-services/user.service";
+import { LoadingService } from "./loading.service";
+import { HotelFirebaseService } from "./hotel-firebase.service";
 import { BookingsService } from "./bookings.service";
-import { BookingCartService } from "../booking-payment/bookingCart.service";
+import { BookingCartService } from "./bookingCart.service";
 import { exhaustMap, tap } from "rxjs/operators";
-import { Booking } from "../booking-payment/booking.model";
-import { User } from "../auth/user.model";
+import { Booking } from "../models/booking.model";
+import { User } from "../models/user.model";
 
 @Injectable({
   providedIn: "root",

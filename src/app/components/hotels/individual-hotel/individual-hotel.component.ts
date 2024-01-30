@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { Hotel } from "../hotel.model";
+import { Hotel } from "../../../models/hotel.model";
 import { Subscription } from "rxjs";
 import { ActivatedRoute, Router } from "@angular/router";
-import { HotelService } from "../hotel.service";
-import { AuthService } from "../auth/auth.service";
+import { HotelService } from "../../../services/hotel.service";
+import { AuthService } from "../../../services/auth-services/auth.service";
 import { FormControl, FormGroup } from "@angular/forms";
-import { Booking } from "../booking-payment/booking.model";
-import { BookingCartService } from "../booking-payment/bookingCart.service";
+import { Booking } from "../../../models/booking.model";
+import { BookingCartService } from "../../../services/bookingCart.service";
 import { formatDate } from "@angular/common";
 
 @Component({

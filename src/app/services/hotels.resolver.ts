@@ -9,7 +9,7 @@ import { Observable, of } from "rxjs";
 import { LoadingService } from "./loading.service";
 import { HotelFirebaseService } from "./hotel-firebase.service";
 import { tap } from "rxjs/operators";
-import { Hotel } from "./hotel.model";
+import { Hotel } from "../models/hotel.model";
 
 @Injectable({
   providedIn: "root",

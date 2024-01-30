@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 
-import { User } from "./user.model";
+import { User } from "../../models/user.model";
 import { HttpClient } from "@angular/common/http";
 import { exhaustMap, map } from "rxjs/operators";
-import { Booking } from "../booking-payment/booking.model";
+import { Booking } from "../../models/booking.model";
 
 @Injectable({
   providedIn: "root",

@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, NgForm, Validators } from "@angular/forms";
-import { Hotel } from "../hotel.model";
-import { LoadingService } from "../loading.service";
-import { HotelFirebaseService } from "../hotel-firebase.service";
-import { HotelService } from "../hotel.service";
+import { Hotel } from "../../../models/hotel.model";
+import { LoadingService } from "../../../services/loading.service";
+import { HotelFirebaseService } from "../../../services/hotel-firebase.service";
+import { HotelService } from "../../../services/hotel.service";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 
 @Component({

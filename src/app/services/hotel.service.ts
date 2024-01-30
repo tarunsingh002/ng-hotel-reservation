@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Hotel } from "./hotel.model";
+import { Hotel } from "../models/hotel.model";
 import { BehaviorSubject } from "rxjs";
 
 @Injectable({

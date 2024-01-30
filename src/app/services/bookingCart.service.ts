@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Booking } from "./booking.model";
+import { Booking } from "../models/booking.model";
 import { BehaviorSubject } from "rxjs";
-import { HotelService } from "../hotel.service";
+import { HotelService } from "./hotel.service";
 
 @Injectable({
   providedIn: "root",

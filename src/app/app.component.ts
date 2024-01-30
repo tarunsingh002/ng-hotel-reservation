@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { LoadingService } from "./loading.service";
+import { LoadingService } from "./services/loading.service";
 import { Subscription } from "rxjs";
-import { AuthService } from "./auth/auth.service";
+import { AuthService } from "./services/auth-services/auth.service";
 import { NavigationEnd, Router } from "@angular/router";
 
 @Component({

@@ -1,5 +1,8 @@
 import { Component } from "@angular/core";
-import { AuthService, responseData } from "./auth.service";
+import {
+  AuthService,
+  responseData,
+} from "../../services/auth-services/auth.service";
 import { NgForm } from "@angular/forms";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
