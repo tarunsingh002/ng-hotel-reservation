@@ -28,6 +28,11 @@ export class BookingPaymentComponent implements OnInit, OnDestroy {
     totalAmount: number;
   };
 
+  _address: string = "";
+  _nameOnCard: string = "";
+  _cardNumber: number = 0;
+  _expiryDate: string = "";
+
   constructor(
     private userS: UserService,
     private aservice: AuthService,
@@ -60,6 +65,11 @@ export class BookingPaymentComponent implements OnInit, OnDestroy {
         }
       }
     );
+
+    this._address = "200, Fictional Street, Gurugram";
+    this._nameOnCard = "Testy Tester";
+    this._cardNumber = 1234567890123456;
+    this._expiryDate = "11/27";
 
     this.userSub = this.aservice.User.subscribe((user) => {
       this.user = user;

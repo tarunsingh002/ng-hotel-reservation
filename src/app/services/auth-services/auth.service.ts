@@ -142,7 +142,7 @@ export class AuthService {
       obj._token,
       new Date(obj._tokenExpirationDate),
       obj.webmaster,
-      obj.orders,
+      obj.bookings,
       obj.rtdid
     );
 

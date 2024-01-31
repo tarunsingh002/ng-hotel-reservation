@@ -23,14 +23,14 @@ export class UserService {
       .post<{ name: string }>(`${this.api}/bookings.json`, bookingCart)
       .pipe(
         exhaustMap((res) => {
-          let b = new Booking(
-            bookingCart.hotelId,
-            bookingCart.roomsQuantity,
-            bookingCart.fromDate,
-            bookingCart.toDate,
-            bookingCart.totalAmount,
-            res.name
-          );
+          // let b = new Booking(
+          //   bookingCart.hotelId,
+          //   bookingCart.roomsQuantity,
+          //   bookingCart.fromDate,
+          //   bookingCart.toDate,
+          //   bookingCart.totalAmount,
+          //   res.name
+          // );
           user.bookings.push(res.name);
           localStorage.setItem("userData", JSON.stringify(user));
           return this.http.patch(`${this.api}/users/${user.rtdid}.json`, user);
