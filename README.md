@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Project Working Link
 
-https://ng-hotel-booking.netlify.app/
+https://ng-spa-hotel-booking.vercel.app/
 
 ## User Email and Password to test out various features:
 
