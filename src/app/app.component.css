@@ -1,7 +1,11 @@
 app-loading-spinner {
-  height: 80vh;
+  height: 78vh;
 }
 
 footer {
   height: 11vh;
+}
+
+footer a {
+  text-decoration: none;
 }

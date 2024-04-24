@@ -3,18 +3,18 @@
     <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
             <form #f="ngForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
+                <div class="mb-3">
+                    <label class="form-label" for="name">Name</label>
                     <input type="text" class="form-control" name="name" ngModel #name="ngModel" required>
                     <small *ngIf="name.invalid && name.touched">Name is a required field</small>
                 </div>
-                <div class="form-group">
-                    <label for="name">Email</label>
+                <div class="mb-3">
+                    <label class="form-label" for="name">Email</label>
                     <input type="email" class="form-control" name="email" ngModel #email="ngModel" required>
                     <small *ngIf="email.invalid && email.touched">Email is a required field</small>
                 </div>
-                <div class="form-group">
-                    <label for="Name">Query</label>
+                <div class="mb-3">
+                    <label class="form-label" for="Name">Query</label>
                     <textarea type="text" class="form-control" name="query" rows="5" ngModel #query="ngModel"
                         required></textarea>
                     <small *ngIf="query.invalid && query.touched">Query is a required field</small>

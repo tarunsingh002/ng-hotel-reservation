@@ -13,12 +13,12 @@
                         <div class="card-body">
                             <h6 class="card-subtitle text-center mb-4">{{"Location: "+hotel.location}}
                             </h6>
-                            <h6 class="card-subtitle text-center mb-4">{{"Amenities: "+hotel.amenities}}
+                            <h6 class="card-subtitle text-center mb-5">{{"Amenities: "+hotel.amenities}}
                             </h6>
                             <h6 class="card-subtitle text-center">
                                 {{"Price: "+ (hotel.price | currency:"&#8360;")}}
                             </h6>
-                            <h6 class="text-center mt-1 mb-4 mb-xl-4 lead">per room per night</h6>
+                            <h6 class="text-center mt-1 mb-4 lead">per room per night</h6>
 
                             <p class="card-text">
                                 {{hotel.description}}
@@ -34,13 +34,13 @@
                 <div class="card-body">
                     <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
                         <div formGroupName="dates">
-                            <div class="form-group">
-                                <label for="fromDate">From Date</label>
+                            <div class="mb-3">
+                                <label class="form-label" for="fromDate">From Date</label>
                                 <input type="date" formControlName="fromDate" id="fromDate" class="form-control"
                                     [min]="today">
                             </div>
-                            <div class="form-group mb-1">
-                                <label for="toDate">To Date</label>
+                            <div class="mb-3">
+                                <label class="form-label" for="toDate">To Date</label>
                                 <input type="date" formControlName="toDate" id="toDate" class="form-control"
                                     [min]="minToDate">
                             </div>
@@ -48,8 +48,8 @@
                                 <small>{{reactiveForm.controls.dates.errors.dates}}</small>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="mb-2" for="quantity">Number of Rooms</label>
+                        <div class="mb-3">
+                            <label class="form-label" class="mb-2" for="quantity">Number of Rooms</label>
                             <select formControlName="quantity" id="quantity" class="form-control">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -59,8 +59,10 @@
                                 <option value="6">6</option>
                             </select>
                         </div>
-                        <button [disabled]="!reactiveForm.valid" type="submit" [disabled]="!auth || webmaster"
-                            class="btn btn-block btn-lg btn-primary mt-4">Book</button>
+                        <div class="d-grid">
+                            <button [disabled]="!reactiveForm.valid" type="submit" [disabled]="!auth || webmaster"
+                                class="btn btn-block btn-lg btn-primary mt-1">Book</button>
+                        </div>
                     </form>
                 </div>
 

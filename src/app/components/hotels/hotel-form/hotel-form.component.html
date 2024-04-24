@@ -3,50 +3,55 @@
     <div class="row d-flex justify-content-center my-4">
         <div class="col-lg-6 col-md-8">
             <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
-                <div class="form-group">
-                    <label for="name">Name</label>
+                <div class="mb-3">
+                    <label class="form-label" for="name">Name</label>
                     <input type="text" id="name" formControlName="name" class="form-control">
                     <small *ngIf="reactiveForm.controls.name.invalid && reactiveForm.controls.name.touched">Name is a
                         required field</small>
                 </div>
-                <div class="form-group">
-                    <label for="location">Location</label>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
                     <input type="text" id="location" formControlName="location" class="form-control">
                     <small
                         *ngIf="reactiveForm.controls.location.invalid && reactiveForm.controls.location.touched">Location
                         is a required field</small>
                 </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
                     <input type="text" id="description" formControlName="description" class="form-control">
                     <small
                         *ngIf="reactiveForm.controls.description.invalid && reactiveForm.controls.description.touched">Description
                         is a required field</small>
                 </div>
-                <div class="form-group">
-                    <label for="amenities">Amenities</label>
+                <div class="mb-3">
+                    <label class="form-label" for="amenities">Amenities</label>
                     <input type="text" id="amenities" formControlName="amenities" class="form-control">
                     <small
                         *ngIf="reactiveForm.controls.amenities.invalid && reactiveForm.controls.amenities.touched">amenities
                         is a required field</small>
                 </div>
-                <div class="form-group">
-                    <label for="url">Image URL</label>
+                <div class="mb-3">
+                    <label class="form-label" for="url">Image URL</label>
                     <input type="text" id="url" formControlName="url" class="form-control">
                     <small *ngIf="reactiveForm.controls.url.invalid && reactiveForm.controls.url.touched">Url is a
                         required field</small>
                 </div>
-                <div class="form-group">
-                    <label for="price">Price</label>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Price</label>
                     <input type="number" id="price" formControlName="price" class="form-control">
                     <small *ngIf="reactiveForm.controls.price.invalid && reactiveForm.controls.price.touched">Price is a
                         required field</small>
                 </div>
 
-                <button [disabled]="reactiveForm.invalid" class="btn btn-primary" type="submit" *ngIf="!editMode">Add
-                    Hotel</button>
-                <button [disabled]="reactiveForm.invalid" class="btn btn-primary" type="submit" *ngIf="editMode">Update
-                    Hotel</button>
+                <div class="d-grid">
+                    <button [disabled]="reactiveForm.invalid" class="btn btn-primary text-light" type="submit"
+                        *ngIf="!editMode">Add
+                        Hotel</button>
+                    <button [disabled]="reactiveForm.invalid" class="btn btn-primary text-light" type="submit"
+                        *ngIf="editMode">Update
+                        Hotel</button>
+                </div>
+
 
             </form>
         </div>

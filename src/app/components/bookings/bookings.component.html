@@ -11,21 +11,26 @@
                     <li class="list-group-item text-center">
                         {{cart.hotel.name}}
                     </li>
-                    <li class="list-group-item">
-                        {{"Location: "+cart.hotel.location}}
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>Location:</div>
+                        <div>{{cart.hotel.location}}</div>
                     </li>
-                    <li class="list-group-item">
-                        {{"Number of Rooms: "+cart.roomsQuantity}}
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>Number of Rooms:</div>
+                        <div>{{cart.roomsQuantity}}</div>
                     </li>
-                    <li class="list-group-item">
-                        {{"From Date: "+cart.fromDate}}
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>From Date:</div>
+                        <div>{{cart.fromDate}}</div>
                     </li>
-                    <li class="list-group-item">
-                        {{"To Date: "+cart.toDate}}
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>To Date:</div>
+                        <div>{{cart.toDate}}</div>
                     </li>
                 </ul>
-                <div class="card-footer">
-                    {{"Total Amount: "+(cart.totalAmount | currency:"&#8360;")}}
+                <div class="card-footer d-flex justify-content-between">
+                    <div>Total Amount:</div>
+                    <div>{{(cart.totalAmount | currency:"&#8360;")}}</div>
                 </div>
             </div>
         </div>
